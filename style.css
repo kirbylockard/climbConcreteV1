@@ -3,6 +3,7 @@
   --climb-light-grey: #74746D;
   --climb-dark-grey: #20201E;
   --light-grey: #C7C7C5;
+  --darker-yellow: #B39621;
 }
 
 body {
@@ -53,12 +54,12 @@ ul {
 
   padding: 1.5rem 1rem;
   font-size: 1.75rem;
-  color: #b1af87;
+  color: var(--darker-yellow);
 }
 
-a:hover {
+/* a:hover {
   text-decoration: underline;
-}
+} */
 
 .hero {
   position: relative;
@@ -94,6 +95,7 @@ a:hover {
 }
 
 .hero .downarr {
+  display: block;
   position: absolute;
   bottom: 3rem;
   left: 2rem;
@@ -124,6 +126,7 @@ section img {
   background-color: var(--light-grey);
   border-top: solid .75rem var(--climb-yellow);
   border-left:solid .75rem var(--climb-yellow);
+  padding-left: 1rem;
 }
 
 .pillar-info h2 {
