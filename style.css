@@ -2,13 +2,14 @@
   --climb-yellow: #e0bc29;
   --climb-light-grey: #74746D;
   --climb-dark-grey: #20201E;
+  --light-grey: #C7C7C5;
 }
 
 body {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: Perpetua;
   color: var(--climb-dark-grey);
   background-color: var(--climb-light-grey);
-  background-color: #bebebe;
+  background-color: var(--light-grey);
 }
 /* RESETS */
 * {
@@ -32,9 +33,6 @@ header {
   width: 100%;
   height: 20vh;
   background-color: var(--climb-dark-grey);
-}
-main {
-  padding: 0 1rem;
 }
 
 header .logo {
@@ -72,7 +70,6 @@ a:hover {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 30rem;
   height: 80vh;
   opacity: 30%;
 }
@@ -109,32 +106,37 @@ a:hover {
 main {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
 }
 
 section {
   display: block;
-  height: 90vh;
-  padding-top: 5rem;
   position: relative;
+  height: 100vh;
 }
 
 section img {
-  height: 50vh;
-  width: 75vw;
+  width: 100vw;
+  height: 70vh;
   object-fit: cover;
-  filter : drop-shadow(-.3rem .3rem .25rem var(--climb-yellow));
+  /* filter : drop-shadow(-.3rem .3rem .25rem var(--climb-yellow)); */
   opacity: 70%;
 }
 
-section h2 {
+.pillar-info {
+  background-color: var(--light-grey);
+  border-top: solid .75rem var(--climb-yellow);
+  border-left:solid .75rem var(--climb-yellow);
+  height: 30vh;
+}
+
+.pillar-info h2 {
   /* position: absolute;
   transform: translate(1rem, -4rem); */
   padding-top: 1rem;
   font-size: 3.25rem;
 }
 
-section p {
+.pillar-info p {
   font-size: 1.5rem;
   line-height: 1.25;;
   padding: 1.5rem 1rem;
@@ -144,16 +146,20 @@ section p {
 /* CONTACT to be implimented later */
 
 .contact {
-  padding-top: 3rem;
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 80vh;
+  
 }
 
 .contact h2 {
   text-align: center;
   font-size: 3rem;
+  border-top: double 1rem var(--climb-yellow);
+  padding-top: 5rem;
 }
 
 .contact p,
@@ -167,6 +173,8 @@ section p {
 .contactinfo {
   text-align: left;
   padding-top: 3rem;
+  border-bottom: double 1rem var(--climb-yellow);
+  padding-bottom: 5rem;
 }
 
 
