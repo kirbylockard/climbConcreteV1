@@ -1,9 +1,10 @@
 :root {
-  --climb-yellow: #e0bc29;
+  --climb-yellow: #E5BB44;  /*E0BC29*/
   --climb-light-grey: #74746D;
   --climb-dark-grey: #20201E;
   --light-grey: #C7C7C5;
   --darker-yellow: #B39621;
+  --dark-grey-transparent: #20201E00;
 }
 
 body {
@@ -30,23 +31,42 @@ a {
 
 
 /* HEADER AND NAV */
+.landing {
+  height: 100vh;
+  width: 100vw;
+  display: inline-flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.landing-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  opacity: .4;
+}
+
 header {
   width: 100%;
-  height: 20vh;
-  background-color: var(--climb-dark-grey);
-}
-
-header .logo {
-  display: flex;
+  background: linear-gradient(to bottom, var(--climb-dark-grey) 50%, var(--dark-grey-transparent));
+  display: inline-flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  position: relative;
+  padding-bottom: 6rem;
 }
 
-header .logo img {
+.head-logo {
   width: 40%;
   padding-top: 2rem;
 }
 
-ul {
+.navigation ul{
+  width: 100vw;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -54,47 +74,27 @@ ul {
 
   padding: 1.5rem 1rem;
   font-size: 1.75rem;
-  color: var(--darker-yellow);
+  color: var(--climb-yellow);
 }
 
-/* a:hover {
-  text-decoration: underline;
-} */
+.herotxt {
+  position: absolute;
+  top:55%;
+  left:50%;
+  transform: translate(-50%, -55%);
+  width: 90vw;
 
-.hero {
-  position: relative;
+  font-size: 2.5rem;
+  padding: 1rem 2rem;
   text-align: center;
 }
 
-.heroimg {
-  background: url(img/hero.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 80vh;
-  opacity: 30%;
-}
-
-.hero .herotxt {
-  position: absolute;
-  top:50%;
-  left:50%;
-  transform: translate(-50%, -50%);
-  width: 90vw;
-}
-
-.hero .herotxt h1 {
+/* .herotxt h1 {
   font-size: 3rem;
   line-height: 1.5em;
-}
+} */
 
-.hero .herotxt p {
-  font-size: 2rem;
-  padding: 1rem 2rem;
-
-}
-
-.hero .downarr {
+.downarr {
   display: block;
   position: absolute;
   bottom: 3rem;
@@ -118,14 +118,14 @@ main {
   flex-direction: column;
 }
 
-section {
+.pillar-card {
   display: inline-flex;
   flex-direction: column;
 }
 
-section img {
+.pillar-img {
   width: 100vw;
-  height: 70vh;
+
   object-fit: cover;
   opacity: 70%;
 }
@@ -139,11 +139,11 @@ section img {
 
 .pillar-info h2 {
   padding-top: 1rem;
-  font-size: 3.25rem;
+  font-size: 2.75rem;
 }
 
 .pillar-info p {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   line-height: 1.25;;
   padding: 1.5rem 1rem;
 }
@@ -157,7 +157,6 @@ section img {
   justify-content: center;
   align-items: center;
   height: 80vh;
-  
 }
 
 .contact h2 {
@@ -165,7 +164,7 @@ section img {
   text-align: center;
   font-size: 3rem;
   border-top: double 1rem var(--climb-yellow);
-  padding-top: 5rem;
+  padding-top: 3rem;
 }
 
 .contact p,
@@ -178,10 +177,10 @@ section img {
 }
 
 .contactinfo {
+  font-size: 1.25rem;
   text-align: left;
-  padding-top: 3rem;
+  padding: 2.5rem 1rem 3rem;
   border-bottom: double 1rem var(--climb-yellow);
-  padding-bottom: 5rem;
 }
 
 .phone .fas,
@@ -204,7 +203,6 @@ footer {
   justify-content: space-around;
   align-items: center;
   height: 20vh;
-  margin-top: 2rem;
 }
 
 footer img {
@@ -213,6 +211,6 @@ footer img {
 
 footer .footcontactinfo {
   color: var(--climb-light-grey);
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   line-height: 1.75;
 }
