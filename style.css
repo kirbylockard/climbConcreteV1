@@ -121,6 +121,8 @@ main {
 .pillar-card {
   display: inline-flex;
   flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .pillar-img {
