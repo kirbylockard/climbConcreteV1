@@ -8,7 +8,7 @@
 }
 
 body {
-  font-family: Perpetua;
+  font-family: Perpetua; /*Perpetua*/
   color: var(--climb-dark-grey);
   background-color: var(--climb-light-grey);
   background-color: var(--light-grey);
@@ -46,7 +46,7 @@ a {
   width: 100vw;
   height: 100vh;
   object-fit: cover;
-  opacity: .4;
+  opacity: .25;
 }
 
 header {
@@ -73,20 +73,26 @@ header {
   justify-content: space-around;
 
   padding: 1.5rem 1rem;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   color: var(--climb-yellow);
 }
 
 .herotxt {
   position: absolute;
-  top:55%;
+  top:70%;
   left:50%;
-  transform: translate(-50%, -55%);
-  width: 90vw;
+  transform: translate(-50%, -70%);
+  width: 95vw;
 
-  font-size: 2.5rem;
+  font-size: 1.75rem;
+  line-height: 1.5;
   padding: 1rem 2rem;
   text-align: center;
+}
+
+.highlight-txt {
+  color: var(--climb-dark-grey);
+  font-weight: bold;
 }
 
 /* .herotxt h1 {
@@ -136,18 +142,18 @@ main {
   background-color: var(--light-grey);
   border-top: solid .75rem var(--climb-yellow);
   border-left:solid .75rem var(--climb-yellow);
-  padding-left: 1rem;
 }
 
 .pillar-info h2 {
   padding-top: 1rem;
-  font-size: 2.75rem;
+  font-size: 2.4rem;
+  padding-left: 1rem;
 }
 
 .pillar-info p {
-  font-size: 1.4rem;
-  line-height: 1.25;;
-  padding: 1.5rem 1rem;
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  padding: 1.5rem 1rem 1.5rem 1.5rem;
 }
 
 
