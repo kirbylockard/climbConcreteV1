@@ -90,6 +90,11 @@ header {
   text-align: center;
 }
 
+.thankstxt {
+  top:60%;
+  transform: translate(-50%, -60%);
+}
+
 .highlight-txt {
   color: var(--climb-dark-grey);
   font-weight: bold;
@@ -164,7 +169,8 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 80vh;
+  margin: 3rem 0;
+  /* height: 80vh; */
 }
 
 .contact h2 {
@@ -175,8 +181,8 @@ main {
   padding-top: 3rem;
 }
 
-.contact p,
-.contactinfo {
+/* .contactinfo,*/
+.contact p { 
   padding: 1rem 1rem 0;
   font-size: 1.5rem;
   line-height: 2rem;
@@ -184,6 +190,43 @@ main {
   width: 90vw;
 }
 
+.contact-form {
+  display: inline-flex;
+  flex-direction: column;
+  width: 90vw;
+  margin: 2rem 2rem 0 2rem;
+  border-bottom: double 1rem var(--climb-yellow);;
+  padding-bottom: 3rem;
+
+}
+.contact-form label{
+  font-size: 1.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  font: inherit;
+  font-size: 1.5rem;
+  padding: .5rem;
+  margin: 1rem;
+}
+
+.contact-send {
+  height:4rem;
+  width: 30vw;
+  align-self: center;
+  margin: 2rem;
+  margin-bottom: 0;
+
+  font: inherit;
+  font-size: 1.75rem;
+  font-weight: bold;
+  background-color: var(--climb-yellow);
+  border-radius: .75rem;
+}
+
+
+/*
 .contactinfo {
   font-size: 1.25rem;
   text-align: left;
@@ -194,7 +237,7 @@ main {
 .phone .fas,
 .email .fas {
   padding: 0 1.5rem;
-}
+} */
 
 
 
