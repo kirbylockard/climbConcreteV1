@@ -5,10 +5,19 @@
   --light-grey: #C7C7C5;
   --darker-yellow: #B39621;
   --dark-grey-transparent: #20201E00;
+
+  --fs-xl: 5rem;
+  --fs-800: 3rem;
+  --fs-700: 2.4rem;
+  --fs-600: 1.9rem;
+  --fs-500: 1.75rem;
+  --fs-400: 1.6rem; 
+  --fs-200: 1.15rem;
 }
 
 body {
-  font-family: Perpetua; /*Perpetua*/
+  font-family: "Arial"; /*Perpetua Times New Roman
+  Tahoma Arial*/
   color: var(--climb-dark-grey);
   background-color: var(--climb-light-grey);
   background-color: var(--light-grey);
@@ -73,7 +82,8 @@ header {
   justify-content: space-around;
 
   padding: 1.5rem 1rem;
-  font-size: 1.5rem;
+  font-size: var(--fs-500);
+  letter-spacing: .25rem;
   color: var(--climb-yellow);
 }
 
@@ -84,7 +94,7 @@ header {
   transform: translate(-50%, -70%);
   width: 95vw;
 
-  font-size: 1.75rem;
+  font-size: var(--fs-600);
   line-height: 1.5;
   padding: 1rem 2rem;
   text-align: center;
@@ -93,6 +103,7 @@ header {
 .thankstxt {
   top:60%;
   transform: translate(-50%, -60%);
+  font-size: var(--fs-700);
 }
 
 .highlight-txt {
@@ -151,13 +162,13 @@ main {
 
 .pillar-info h2 {
   padding-top: 1rem;
-  font-size: 2.4rem;
+  font-size: var(--fs-700);
   padding-left: 1rem;
 }
 
 .pillar-info p {
-  font-size: 1.3rem;
-  line-height: 1.8rem;
+  font-size: var(--fs-500);
+  line-height: 2rem;
   padding: 1.5rem 1rem 1.5rem 1.5rem;
 }
 
@@ -176,7 +187,7 @@ main {
 .contact h2 {
   width: 90vw;
   text-align: center;
-  font-size: 3rem;
+  font-size: var(--fs-800);
   border-top: double 1rem var(--climb-yellow);
   padding-top: 3rem;
 }
@@ -184,7 +195,7 @@ main {
 /* .contactinfo,*/
 .contact p { 
   padding: 1rem 1rem 0;
-  font-size: 1.5rem;
+  font-size: var(--fs-500);
   line-height: 2rem;
   text-align: center;
   width: 90vw;
@@ -200,13 +211,13 @@ main {
 
 }
 .contact-form label{
-  font-size: 1.5rem;
+  font-size: var(--fs-500);
 }
 
 .contact-form input,
 .contact-form textarea {
   font: inherit;
-  font-size: 1.5rem;
+  font-size: var(--fs-500);
   padding: .5rem;
   margin: 1rem;
 }
@@ -219,30 +230,13 @@ main {
   margin-bottom: 0;
 
   font: inherit;
-  font-size: 1.75rem;
+  font-size: var(--fs-700);
   font-weight: bold;
   background-color: var(--climb-yellow);
   border-radius: .75rem;
+  color: inherit;
+  border: solid .1rem var(--climb-dark-grey);
 }
-
-
-/*
-.contactinfo {
-  font-size: 1.25rem;
-  text-align: left;
-  padding: 2.5rem 1rem 3rem;
-  border-bottom: double 1rem var(--climb-yellow);
-}
-
-.phone .fas,
-.email .fas {
-  padding: 0 1.5rem;
-} */
-
-
-
-
-
 
 
 /* FOOTER */
@@ -262,6 +256,6 @@ footer img {
 
 footer .footcontactinfo {
   color: var(--climb-light-grey);
-  font-size: 1.15rem;
+  font-size: var(--fs-200);
   line-height: 1.75;
 }
