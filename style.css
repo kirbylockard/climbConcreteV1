@@ -15,6 +15,10 @@
   --fs-200: 1.15rem;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Arial"; /*Perpetua Times New Roman
   Tahoma Arial*/
@@ -111,11 +115,6 @@ header {
   font-weight: bold;
 }
 
-/* .herotxt h1 {
-  font-size: 3rem;
-  line-height: 1.5em;
-} */
-
 .downarr {
   display: block;
   position: absolute;
@@ -164,6 +163,7 @@ main {
   padding-top: 1rem;
   font-size: var(--fs-700);
   padding-left: 1rem;
+  font-family: "Hops and Barley Clean";
 }
 
 .pillar-info p {
