@@ -5,6 +5,7 @@
   --light-grey: #C7C7C5;
   --darker-yellow: #B39621;
   --dark-grey-transparent: #20201E00;
+  --dark-grey-low-opacity: #20201EE6;
 
   --fs-xl: 5rem;
   --fs-800: 3rem;
@@ -69,8 +70,11 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
   padding-bottom: 6rem;
+
+  position: fixed;
+  top: 0;
+  z-index: 1;
 }
 
 .head-logo {
@@ -90,6 +94,46 @@ header {
   letter-spacing: .25rem;
   color: var(--climb-yellow);
 }
+
+#toTop.hidden{
+  display: none;
+}
+
+/* SMALL HEADER STYLING */
+
+header.head-small {
+  background-color: var(--climb-dark-grey);
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0;
+}
+
+.head-logo.head-small {
+  margin:1rem;
+  align-self: center;
+  z-index: 3;
+  padding: 0;
+}
+
+.navigation ul.head-small {
+flex-direction: column;
+align-items: flex-end;
+width:auto;
+
+position: relative;
+/* top set by js */
+background-color: var(--dark-grey-low-opacity);
+padding: 1rem;
+font-size: 3rem;
+}
+
+.navigation ul.head-small a {
+  padding: 1rem;
+}
+
+
+/* END SMALL HEADDER */
 
 .herotxt {
   position: absolute;
