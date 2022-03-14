@@ -1,11 +1,13 @@
 :root {
   --climb-yellow: #E5BB44;  /*E0BC29*/
   --climb-light-grey: #74746D;
+  --climb-lightest-grey: #b5b5b5;
   --climb-dark-grey: #20201E;
   --light-grey: #C7C7C5;
   --darker-yellow: #B39621;
   --dark-grey-transparent: #20201E00;
   --dark-grey-low-opacity: #20201EE6;
+  --dark-grey-minimal-opacity: #20201EB3;
 
   --fs-xl: 5rem;
   --fs-800: 3rem;
@@ -66,25 +68,26 @@ a {
 header {
   width: 100%;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
+  background-color: var(--climb-dark-grey);
 }
 
 .nav-bar {
-  position: relative; 
+  /* position: relative; does not work when ul is inside nav */
   /* position: relative to put nav-menu under/behind nav-bar background and not interfere with heading height */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding-bottom: 0;
-  background-color: var(--climb-dark-grey);
-  z-index: 3;
   
-
+  z-index: 3;
 }
 
-.nav-logo {
+.nav-logo,
+.foot-logo {
   width: 40%;
+  max-width: 200px;
   margin:2rem;
   align-self: center;
 }
@@ -118,7 +121,6 @@ header {
 .nav-menu{
   width: 100vw;
   position: fixed;
-  top: -25vh;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -204,10 +206,10 @@ main {
 }
 
 .pillar-img {
-  width: 100vw;
-
+  width: 100%;
   object-fit: cover;
   opacity: 70%;
+  overflow: hidden;
 }
 
 .pillar-info {
@@ -220,7 +222,7 @@ main {
   padding-top: 1rem;
   font-size: var(--fs-700);
   padding-left: 1rem;
-  font-family: "Hops and Barley Clean";
+  font-family: "Tahoma";
 }
 
 .pillar-info p {
@@ -300,19 +302,150 @@ main {
 
 footer {
   background-color: var(--climb-dark-grey);
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  display: inline-flex;
+  flex-direction: column-reverse;
+  justify-content: center;
   align-items: center;
-  height: 20vh;
+  width: 100%;
+  padding: 1rem;
 }
 
-footer img {
-  width: 30vw;
-}
 
-footer .footcontactinfo {
+.footcontactinfo {
   color: var(--climb-light-grey);
   font-size: var(--fs-200);
   line-height: 1.75;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.phone,
+.email {
+  padding: .25rem;
+}
+
+@media screen and (min-width: 768px) {
+
+  .hamburger {
+    display: none;
+  }
+
+  .header {
+    background: linear-gradient(to bottom, var(--climb-dark-grey) 50%, var(--dark-grey-transparent));
+    padding-bottom: 4rem;
+  }
+
+  .nav-bar {
+    justify-content: space-between;
+    align-items: flex-end;
+    
+  }
+
+  .nav-menu {
+    position: relative;
+    top: 0;
+    width:auto;
+    transition: none;
+    z-index: 4;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    font-size: var(--fs-700);
+    margin-bottom: 2rem;
+    padding-bottom: 0;
+  }
+
+  .nav-link {
+    padding-bottom: 0;
+  }
+  
+  .nav-link:hover {
+    text-decoration: underline;
+  }
+
+  .herotxt {
+    width: 80vw;
+    transform: translate(-50%, -100%);
+    font-size: var(--fs-700);
+  }
+
+  .pillar-card {
+    margin: 7vw 15vw;
+    position: relative;
+    border: solid .25rem var(--climb-yellow);
+    height: 80vh;
+  }
+
+  .pillar-info {
+    z-index: 1;
+    background-color: var(--dark-grey-minimal-opacity);
+    color: var(--climb-lightest-grey);
+  }
+
+  .pillar-img {
+    position: absolute;
+    height: 100%;
+  }
+
+  footer {
+    height: 15vh;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .footcontactinfo {
+    margin: 2rem;
+  }
+  .email,
+  .phone {
+    font-size: var(--fs-400);
+  }
+
+} 
+
+@media screen and (min-width: 900px) {
+
+  .nav-bar {
+    margin: 0 6rem;
+  }
+
+  .nav-menu {
+    font-size: var(--fs-600);
+  }
+
+  .herotxt {
+    width: 65vw;
+  }
+
+  .pillars {
+    flex-direction: row;
+    align-items: center;
+    margin: 4rem auto;
+  }
+
+  .pillar-card {
+    max-width: 30vw;
+    margin: 1rem;
+  }
+
+  .pillar-info {
+    height: 50%;
+  }
+
+  footer {
+    padding: 0 6rem;
+  }
+
+  .footcontactinfo {
+    flex-direction: row;
+    width: auto;
+  }
+
+  .phone,
+  .email {
+    padding: 2rem;
+  }
+  
 }

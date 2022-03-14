@@ -10,29 +10,28 @@
 </head>
 <body>
   <header class="header" id="header">
-
-    <ul class="nav-menu" id="nav-menu">
-      <li id="toTop" class="nav-item hidden">
-        <a href="#landing" class="navlink">back to top</a>
-      </li>
-      <li class="nav-item">
-        <a href="#about" class="nav-link">about</a>
-      </li>
-      <li class="nav-item">
-        <a href="#contact" class="nav-link">contact</a>
-      </li>
-    </ul>
     
-
     <nav class="nav-bar" >
       <a href="index.html" class="nav-logo"><img src="img/climbLogoForDarkBG.svg" alt="" ></a>
- 
 
       <div class="hamburger">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
       </div>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li id="toTop" class="nav-item hidden">
+          <a href="#landing" class="navlink">back to top</a>
+        </li>
+        <li class="nav-item">
+          <a href="#about" class="nav-link">about</a>
+        </li>
+        <li class="nav-item">
+          <a href="#contact" class="nav-link">contact</a>
+        </li>
+      </ul>
+      
     </nav>
 
   </header>
@@ -45,29 +44,34 @@
 
   <main id="about">
 
-    <section class="pillar-card">
-      <div class="pillar-info">
-        <h2>Value</h2>
-        <p>Because construction requires a highly involved cooperation of expertise, at Climb we know that it is about more than just price. Climb's attention to detail through the bidding process, project management and field execution will benefit the success of the project from start to finish.</p>
-      </div>
-    <img class="pillar-img"src="img/value.jpg" alt="">
-    </section>
+    <div class="pillars">
 
-    <section class="pillar-card">
-      <div class="pillar-info">
-        <h2>Relationship</h2>
-        <p>Nothing reinforces a professional relationship more than enjoying success with someone. We believe that healthy relationships with our employees, clients, suppliers, subcontractors, fellow trades, community and even our competitors, will bring real, lasting success.</p>
-      </div>
-      <img src="img/relationship.jpg" alt="" class="pillar-img">
-    </section>
+      <section class="pillar-card">
+        <div class="pillar-info">
+          <h2>Value</h2>
+          <p>Because construction requires a highly involved cooperation of expertise, at Climb we know that it is about more than just price. Climb's attention to detail through the bidding process, project management and field execution will benefit the success of the project from start to finish.</p>
+        </div>
+      <img class="pillar-img"src="img/value.jpg" alt="">
+      </section>
 
-    <section class="pillar-card">
-      <div class="pillar-info">
-        <h2>Professionalism</h2>
-        <p>Delivering on commitments to Safety, Quality and Schedule. At Climb we pride ourselves in our craft. Concrete is what we know, and we know how to do it well.</p>
-      </div>
-      <img src="img/professionalism.jpg" alt="" class="pillar-img">
-    </section>
+      <section class="pillar-card">
+        <div class="pillar-info">
+          <h2>Relationship</h2>
+          <p>Nothing reinforces a professional relationship more than enjoying success with someone. We believe that healthy relationships with our employees, clients, suppliers, subcontractors, fellow trades, community and even our competitors, will bring real, lasting success.</p>
+        </div>
+        <img src="img/relationship.jpg" alt="" class="pillar-img">
+      </section>
+
+      <section class="pillar-card">
+        <div class="pillar-info">
+          <h2>Professionalism</h2>
+          <p>Delivering on commitments to Safety, Quality and Schedule. At Climb we pride ourselves in our craft. Concrete is what we know, and we know how to do it well.</p>
+        </div>
+        <img src="img/professionalism.jpg" alt="" class="pillar-img">
+      </section>
+
+    </div>
+
     <div class="contact-wrap" id="contact">
       <div class="contact">
         <h2>Contact Climb</h2>
@@ -115,10 +119,12 @@
   </main>
 
   <footer>
-    <div class="logo"><img src="img/climbLogoForDarkBG.svg" alt="Climb Concrete Logo"></div>
+    <div class="foot-logo"><img src="img/climbLogoForDarkBG.svg" alt="Climb Concrete Logo"></div>
     <div class="footcontactinfo">
-      <p>scott@climbconcrete.com</p>
-      <p>385-450-0454</p>
+      <div class="phone">
+        <i class="fas fa-phone-alt fa-sm"></i> 385-450-0454</div>
+      <div class="email">
+        <i class="fas fa-envelope fa-sm"></i> scott@climbconcrete.com</div>
     </div>
   </footer>
 

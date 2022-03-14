@@ -1,13 +1,21 @@
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
 const navLinks = document.querySelectorAll(".nav-link");
+const header = document.getElementById("header");
 
-let headerheightnum = document.getElementById("header").clientHeight;
+// let headerheightnum = document.getElementById("header").clientHeight;
+let headerheightnum = parseInt(window.getComputedStyle(header).height);
 console.log(headerheightnum);
 
 //dynamically position nav-menu based on current header height
 const toggleTop = function (element) {
-  if (!element.classList.contains("open")) {
+  console.log(hamburger.style.display);
+  if (window.getComputedStyle(hamburger).display == "none" ) {
+    console.log("navMenu style here");
+    console.log(element.style);
+    return;
+  }
+  else if (!element.classList.contains("open")) {
     let headerheight = ((headerheightnum * (-1)).toString()) + "px";
     element.style.top = `${headerheight}`;
     element.classList.toggle("open");
