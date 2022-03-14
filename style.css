@@ -68,20 +68,15 @@ a {
 header {
   width: 100%;
   position: fixed;
-  z-index: 2;
-  background-color: var(--climb-dark-grey);
+  z-index: 1;
 }
 
 .nav-bar {
-  /* position: relative; does not work when ul is inside nav */
-  /* position: relative to put nav-menu under/behind nav-bar background and not interfere with heading height */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 0;
-  
-  z-index: 3;
+  background-color: var(--climb-dark-grey);
 }
 
 .nav-logo,
@@ -120,7 +115,8 @@ header {
 
 .nav-menu{
   width: 100vw;
-  position: fixed;
+  position: absolute;
+  /* position: absolute w/ z-index: -1 fixed overlapping issue */
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -132,7 +128,8 @@ header {
   background-color: var(--dark-grey-low-opacity);
   padding: 1rem;
   transition: top .7s ease, opacity .7s ease;
-  z-index: 2;
+  z-index: -1;
+  left: 0;
 }
 
 .nav-menu.open {
@@ -345,6 +342,7 @@ footer {
   .nav-bar {
     justify-content: space-between;
     align-items: flex-end;
+    background-color: transparent;
     
   }
 
