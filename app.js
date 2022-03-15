@@ -2,6 +2,8 @@ const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
 const navLinks = document.querySelectorAll(".nav-link");
 const header = document.getElementById("header");
+const toTop = document.querySelector(".uparr");
+
 
 // let headerheightnum = document.getElementById("header").clientHeight;
 let headerheightnum = parseInt(window.getComputedStyle(header).height);
@@ -40,6 +42,14 @@ for ( let i = 0; i < anchors.length; i++) {
   console.log(anchors[i].style);
 }
 
+//create smooth scroll function
+const smoothScroll = function(link) {
+  let href = link.getAttribute('href');
+  console.log(href);
+  let target = document.querySelector(`${href}`);
+  target.scrollIntoView({behavior: "smooth"});
+}
+
 //HAMBURGER OPEN AND CLOSE
 hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("open");
@@ -49,6 +59,7 @@ hamburger.addEventListener("click", () => {
 navLinks.forEach (link => link.addEventListener("click", () => {
   hamburger.classList.remove("open");
   toggleTop(navMenu);
+  smoothScroll(link);
 }))
 
 
