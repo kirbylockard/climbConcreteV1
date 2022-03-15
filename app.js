@@ -29,6 +29,7 @@ const toggleTop = function (element) {
 toggleTop(navMenu);
 
 // FIX OVERSCROLL ON ANCHORS
+//this is making a tiny gab btw landing and main...
 let about = document.querySelector("#about");
 let contact = document.querySelector("#contact");
 let anchors = [about, contact];
