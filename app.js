@@ -7,35 +7,36 @@ const navBar = document.querySelector(".nav-bar");
 const navLogo = document.querySelector(".nav-logo");
 const landing = document.querySelector(".landing");
 const hamBar = document.querySelectorAll(".bar");
-let navMenuPaddingBottom = parseInt(window.getComputedStyle(navMenu).paddingBottom);
-let navMenuPaddingTop = parseInt(window.getComputedStyle(navMenu).paddingTop);
+//let navMenuPaddingBottom = parseInt(window.getComputedStyle(navMenu).paddingBottom);
+//let navMenuPaddingTop = parseInt(window.getComputedStyle(navMenu).paddingTop);
 
-// let headerheightnum = document.getElementById("header").clientHeight;
-let headerheightnum = parseInt(window.getComputedStyle(header).height); 
-console.log(headerheightnum);
-let newNavMenuPaddingTop = headerheightnum + navMenuPaddingTop;
-let navMenuHeight;
+//MEASURE
+let navBarNoPad = navBar.clientHeight;
+let navMenuTotalHeight = parseInt(window.getComputedStyle(navMenu).height);
+let navMenuPadTop = parseInt(window.getComputedStyle(navMenu).paddingTop);
+let navMenuTopHide;
 
-console.log(`HEADER ${headerheightnum}`);
-console.log(`NAVPADDING ${navMenuPaddingBottom}`);
+//if mobile add extra padding to top of navmenu
+if (window.innerWidth <= 768) {
+  console.log("phone");
+  navMenu.style.paddingTop = `${ (navMenuPadTop + navBarNoPad).toString()}px`;
+  navMenuTopHide = `-${(navMenuTotalHeight + navBarNoPad).toString()}px`;
+} else if (window.innerWidth > 768) {
+  console.log("bigger than phone");
+  navMenuTopHide = `-${navMenuTotalHeight.toString()}px`;
+}
+
 
 //dynamically position nav-menu based on current header height
 const toggleTop = function (element) {
 
-  console.log(window.getComputedStyle(hamburger).display);
-  if (window.getComputedStyle(hamburger).display == "none" ) {
-    return;
-  } else {
-    navMenu.style.paddingTop = `${newNavMenuPaddingTop.toString()}px`;
-    navMenuHeight = window.getComputedStyle(navMenu).height;
-  }
-  
   if (!element.classList.contains("open")) {
-    element.style.top = `-${navMenuHeight}`;
-    element.classList.toggle("open");
+    console.log(`${navMenuTopHide}`);
+    element.style.top = `${navMenuTopHide}`;
+    element.classList.remove("open");
   } else if (element.classList.contains("open")) {
     element.style.top = "0px";
-    element.classList.toggle("open");
+    element.classList.add("open");
   }
 }
 
@@ -48,8 +49,8 @@ let contact = document.querySelector("#contact");
 let anchors = [about, contact];
 
 for ( let i = 0; i < anchors.length; i++) {
-  anchors[i].style.paddingTop = `${headerheightnum.toString() + "px"}`;
-  anchors[i].style.marginTop = `${(headerheightnum * -1).toString() + "px"}`;
+  anchors[i].style.paddingTop = `${navBarNoPad.toString() + "px"}`;
+  anchors[i].style.marginTop = `${(navBarNoPad * -1).toString() + "px"}`;
   console.log(anchors[i].style);
 }
 
@@ -64,11 +65,13 @@ for ( let i = 0; i < anchors.length; i++) {
 //HAMBURGER OPEN AND CLOSE
 hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("open");
+  navMenu.classList.toggle("open");
   toggleTop(navMenu);
 })
 
 navLinks.forEach (link => link.addEventListener("click", () => {
   hamburger.classList.remove("open");
+  navMenu.classList.remove("open");
   toggleTop(navMenu);
   //smoothScroll(link);
 }))
@@ -77,7 +80,7 @@ navLinks.forEach (link => link.addEventListener("click", () => {
 
 //INTERSECTION OBSERVER for HEAD CHANGES
 const headerOptions = {
-  rootMargin: `-${headerheightnum}px 0px 0px 0px`
+  rootMargin: `-${navBarNoPad}px 0px 0px 0px`
 };
 
 const headObserver = new IntersectionObserver(function(
@@ -136,3 +139,9 @@ const animationItems = document.querySelectorAll(".pillar-card");
 animationItems.forEach(item => {
   cardObserver.observe(item);
 })
+
+
+
+
+
+
