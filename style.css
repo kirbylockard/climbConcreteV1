@@ -201,9 +201,10 @@ header {
 .uparr {
   position: fixed;
   bottom: 3vw;
-  left: 90%;
+  left: 80vw;
   color: var(--climb-dark-grey);
   transition: color .7s ease, opacity .7s ease;
+  z-index: 3;
 }
 
 .uparr:hover {
@@ -399,6 +400,10 @@ footer {
   
   .nav-link:hover {
     text-decoration: underline;
+  }
+
+  .uparr {
+    left: 90vw;
   }
 
   .herotxt {

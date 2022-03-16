@@ -6,27 +6,34 @@ const toTop = document.querySelector(".uparr");
 const navBar = document.querySelector(".nav-bar");
 const navLogo = document.querySelector(".nav-logo");
 const landing = document.querySelector(".landing");
-let navMenuPadding = parseInt(window.getComputedStyle(navMenu).paddingBottom);
+let navMenuPaddingBottom = parseInt(window.getComputedStyle(navMenu).paddingBottom);
+let navMenuPaddingTop = parseInt(window.getComputedStyle(navMenu).paddingTop);
 
 // let headerheightnum = document.getElementById("header").clientHeight;
 let headerheightnum = parseInt(window.getComputedStyle(header).height); 
-headerheightnum = headerheightnum + navMenuPadding;
+console.log(headerheightnum);
+let newNavMenuPaddingTop = headerheightnum + navMenuPaddingTop;
+let navMenuHeight;
+
 console.log(`HEADER ${headerheightnum}`);
-console.log(`NAVPADDING ${navMenuPadding}`);
+console.log(`NAVPADDING ${navMenuPaddingBottom}`);
 
 //dynamically position nav-menu based on current header height
 const toggleTop = function (element) {
+
   console.log(hamburger.style.display);
   if (window.getComputedStyle(hamburger).display == "none" ) {
     return;
+  } else {
+    navMenu.style.paddingTop = `${newNavMenuPaddingTop.toString()}px`;
+    navMenuHeight = window.getComputedStyle(navMenu).height;
   }
-  else if (!element.classList.contains("open")) {
-    let headerheight = ((headerheightnum * (-1)).toString()) + "px";
-    element.style.top = `${headerheight}`;
+  
+  if (!element.classList.contains("open")) {
+    element.style.top = `-${navMenuHeight}`;
     element.classList.toggle("open");
   } else if (element.classList.contains("open")) {
-    let headerheight = (headerheightnum.toString()) + "px";
-    element.style.top = `${headerheight}`;
+    element.style.top = "0px";
     element.classList.toggle("open");
   }
 }
@@ -81,10 +88,12 @@ const headObserver = new IntersectionObserver(function(
         navBar.classList.add("nav-scrolled");
         navLogo.classList.add("nav-scrolled");
         toTop.classList.remove("hidden");
+        
       } else if (entry.isIntersecting) {
         navBar.classList.remove("nav-scrolled");
         navLogo.classList.remove("nav-scrolled");
         toTop.classList.add("hidden");
+        
       } 
     })
   }, 
