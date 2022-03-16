@@ -20,7 +20,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth; */
 }
 
 body {
@@ -78,6 +78,14 @@ header {
   justify-content: space-between;
   align-items: center;
   background-color: var(--climb-dark-grey);
+  transition: all .6s ease;
+}
+
+.nav-bar.nav-scrolled {
+  background-color: transparent;
+}
+.nav-logo.nav-scrolled {
+  opacity: 0;
 }
 
 .nav-logo,
@@ -191,6 +199,7 @@ header {
 }
 
 .uparr {
+  position: fixed;
   bottom: 3vw;
   left: 90%;
   color: var(--climb-dark-grey);
@@ -218,6 +227,12 @@ main {
   flex-direction: column;
   height: 100vh;
   overflow: hidden;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+
+.card-view {
+  opacity: 1;
 }
 
 .pillar-img {
