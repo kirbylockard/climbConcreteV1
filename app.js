@@ -80,9 +80,11 @@ const headObserver = new IntersectionObserver(function(
       if (!entry.isIntersecting) {
         navBar.classList.add("nav-scrolled");
         navLogo.classList.add("nav-scrolled");
+        toTop.classList.remove("hidden");
       } else if (entry.isIntersecting) {
         navBar.classList.remove("nav-scrolled");
         navLogo.classList.remove("nav-scrolled");
+        toTop.classList.add("hidden");
       } 
     })
   }, 

@@ -203,7 +203,7 @@ header {
   bottom: 3vw;
   left: 90%;
   color: var(--climb-dark-grey);
-  transition: color .7s ease;
+  transition: color .7s ease, opacity .7s ease;
 }
 
 .uparr:hover {
@@ -211,7 +211,7 @@ header {
 }
 
 .hidden {
-  display: none;
+  opacity: 0;
 }
 
 
