@@ -6,6 +6,7 @@ const toTop = document.querySelector(".uparr");
 const navBar = document.querySelector(".nav-bar");
 const navLogo = document.querySelector(".nav-logo");
 const landing = document.querySelector(".landing");
+const hamBar = document.querySelectorAll(".bar");
 let navMenuPaddingBottom = parseInt(window.getComputedStyle(navMenu).paddingBottom);
 let navMenuPaddingTop = parseInt(window.getComputedStyle(navMenu).paddingTop);
 
@@ -21,7 +22,7 @@ console.log(`NAVPADDING ${navMenuPaddingBottom}`);
 //dynamically position nav-menu based on current header height
 const toggleTop = function (element) {
 
-  console.log(hamburger.style.display);
+  console.log(window.getComputedStyle(hamburger).display);
   if (window.getComputedStyle(hamburger).display == "none" ) {
     return;
   } else {
@@ -86,12 +87,24 @@ const headObserver = new IntersectionObserver(function(
     entries.forEach(entry => {
       if (!entry.isIntersecting) {
         navBar.classList.add("nav-scrolled");
+        navMenu.classList.add("nav-scrolled");
         navLogo.classList.add("nav-scrolled");
+        hamburger.classList.add("nav-scrolled");
+        hamBar.forEach(bar => {
+          bar.classList.add("nav-scrolled");
+        })
+        header.classList.add("nav-scrolled");
         toTop.classList.remove("hidden");
         
       } else if (entry.isIntersecting) {
         navBar.classList.remove("nav-scrolled");
+        navMenu.classList.remove("nav-scrolled");
         navLogo.classList.remove("nav-scrolled");
+        hamburger.classList.remove("nav-scrolled");
+        hamBar.forEach(bar => {
+          bar.classList.remove("nav-scrolled");
+        })
+        header.classList.remove("nav-scrolled");
         toTop.classList.add("hidden");
         
       } 
