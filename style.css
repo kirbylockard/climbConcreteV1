@@ -231,9 +231,18 @@ header {
   color: var(--climb-yellow);
 }
 
+.toTop-yellow {
+  color: var(--climb-yellow);
+}
+
+.toTop-yellow:hover {
+  color: var(--climb-light-grey);
+}
+
 .hidden {
   opacity: 0;
 }
+
 
 
 
@@ -285,6 +294,12 @@ main {
 
 /* CONTACT */
 
+.contact-wrap{
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .contact {
   display: flex;
   flex-direction: column;
@@ -294,7 +309,7 @@ main {
 }
 
 .contact h2 {
-  width: 90vw;
+  width: 90%;
   text-align: center;
   font-size: var(--fs-800);
   border-top: double 1rem var(--climb-yellow);
@@ -307,21 +322,22 @@ main {
   font-size: var(--fs-500);
   line-height: 2rem;
   text-align: center;
-  width: 90vw;
+  width: 90%;
 }
 
 .contact-form {
   display: inline-flex;
   flex-direction: column;
-  width: 90vw;
+  width: 90%;
   border-bottom: double 1rem var(--climb-yellow);;
   padding-bottom: 3rem;
+  margin: 0 auto;
 }
 .input-small,
 .input-lg {
   display: inline-flex;
   flex-direction: column;
-  width: 90vw;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -455,6 +471,7 @@ footer {
 
   .uparr {
     left: 90vw;
+    top: 87vh;
   }
 
   .herotxt {
@@ -490,6 +507,12 @@ footer {
   .pillar-img {
     position: absolute;
     height: 100%;
+  }
+
+  .contact-wrap {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
   }
 
   footer {
@@ -529,9 +552,16 @@ footer {
     width: 65vw;
   }
 
+  .uparr {
+    top: 90%;
+  }
+
   .pillars {
+    display: flex;
     flex-direction: row;
+    justify-content: space-between;
     align-items: center;
+    
     margin: 4rem auto;
   }
 
@@ -571,12 +601,18 @@ footer {
     justify-content: space-between;
   }
 
+  .contact-wrap {
+    width: 100%;
+    margin: 3rem auto;
+  }
+
   .contact-send {
     margin: auto;
+
   }
 
   footer {
-    padding: 0 6rem;
+    justify-content: space-around;
   }
 
   .footcontactinfo {

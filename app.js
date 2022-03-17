@@ -7,6 +7,7 @@ const navBar = document.querySelector(".nav-bar");
 const navLogo = document.querySelector(".nav-logo");
 const landing = document.querySelector(".landing");
 const hamBar = document.querySelectorAll(".bar");
+const footer = document.querySelector("footer");
 
 //MEASURE
 let navMenuDefaultTop = window.getComputedStyle(navMenu).top;
@@ -156,7 +157,23 @@ animationItems.forEach(item => {
 })
 
 
+//toTop OBSERVER
+const toTopOptions = {
+  // rootMargin: `-${navBarNoPad}px 0px 0px 0px`
+};
 
-
-
-
+const toTopObserver = new IntersectionObserver(function(
+  entries,
+  toTopObserver
+  ) { entries.forEach(entry => {
+    console.log(entry);
+      if (entry.isIntersecting ) {
+        toTop.classList.add("toTop-yellow");
+       } else if (!entry.isIntersecting) {
+        toTop.classList.remove("toTop-yellow");
+       }  
+})
+}, 
+    toTopOptions);
+  
+toTopObserver.observe(footer);
