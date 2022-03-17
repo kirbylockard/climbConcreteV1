@@ -22,9 +22,12 @@
 html {
   /* scroll-behavior: smooth; */
 }
-
-body::-webkit-scrollbar {
-  background-color: transparent;
+.hide-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+body.hide-scroll::-webkit-scrollbar {
+  display: none;
 }
 
 body {
