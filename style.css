@@ -23,12 +23,17 @@ html {
   /* scroll-behavior: smooth; */
 }
 
+body::-webkit-scrollbar {
+  background-color: transparent;
+}
+
 body {
   font-family: "Arial"; /*Perpetua Times New Roman
   Tahoma Arial*/
   color: var(--climb-dark-grey);
   background-color: var(--climb-light-grey);
   background-color: var(--light-grey);
+  /* overflow: hidden; */
 }
 /* RESETS */
 * {
