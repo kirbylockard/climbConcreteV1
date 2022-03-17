@@ -175,9 +175,9 @@ header {
 
 .herotxt {
   position: absolute;
-  top:70%;
+  top:50%;
   left:50%;
-  transform: translate(-50%, -70%);
+  transform: translate(-50%, -50%);
   width: 95vw;
 
   font-size: var(--fs-600);
@@ -205,7 +205,7 @@ header {
 }
 
 .downarr {
-  bottom: 5rem;
+  bottom: 8rem;
   left: 2rem;
   color: var(--climb-dark-grey);
   animation: animateColor 2.5s cubic-bezier(.7, 0, .3, 1) infinite;
@@ -247,7 +247,7 @@ main {
   display: inline-flex;
   flex-direction: column;
   height: 100vh;
-  overflow: hidden;
+  /* overflow: hidden; */
   opacity: 0;
   transition: opacity 1.5s ease;
 }
@@ -459,8 +459,11 @@ footer {
 
   .herotxt {
     width: 80vw;
-    transform: translate(-50%, -100%);
     font-size: var(--fs-700);
+  }
+
+  main {
+    margin: 5rem auto 0;
   }
 
   .pillar-card {
@@ -475,6 +478,14 @@ footer {
     background-color: var(--dark-grey-minimal-opacity);
     color: var(--climb-lightest-grey);
   }
+
+  .pillar-info h2 {
+    position: absolute;
+    top: -5rem;
+    color: var(--climb-dark-grey);
+    z-index: auto;
+  }
+  
 
   .pillar-img {
     position: absolute;
@@ -497,7 +508,10 @@ footer {
 
 } 
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1530px) {
+  main {
+    width: 80%;
+  }
 
   .nav-bar {
     padding: 0 6rem 4rem;
@@ -522,12 +536,20 @@ footer {
   }
 
   .pillar-card {
-    max-width: 30vw;
+    max-width: 30%;
     margin: 1rem;
   }
 
   .pillar-info {
     min-height: 50%;
+  }
+
+  .pillar-info h2 {
+    font-size: var(--fs-700);
+  }
+
+  .pillar-info p {
+    font-size: var(--fs-400);
   }
 
   .contact p {
