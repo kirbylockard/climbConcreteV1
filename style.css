@@ -398,8 +398,6 @@ footer {
     background: transparent;
   }
 
-  
-
   .hamburger {
     display: none;
   }
@@ -494,11 +492,15 @@ footer {
 @media screen and (min-width: 1200px) {
 
   .nav-bar {
-    padding: 0 6rem;
+    padding: 0 6rem 4rem;
   }
 
   .nav-menu {
     font-size: var(--fs-600);
+  }
+
+  .nav-menu.nav-scrolled {
+    padding: 1rem 6rem;
   }
 
   .herotxt {
