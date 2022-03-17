@@ -7,36 +7,26 @@ const navBar = document.querySelector(".nav-bar");
 const navLogo = document.querySelector(".nav-logo");
 const landing = document.querySelector(".landing");
 const hamBar = document.querySelectorAll(".bar");
-//let navMenuPaddingBottom = parseInt(window.getComputedStyle(navMenu).paddingBottom);
-//let navMenuPaddingTop = parseInt(window.getComputedStyle(navMenu).paddingTop);
 
 //MEASURE
+let navMenuDefaultTop = window.getComputedStyle(navMenu).top;
 let navBarNoPad = navBar.clientHeight;
 let navMenuTotalHeight = parseInt(window.getComputedStyle(navMenu).height);
 let navMenuPadTop = parseInt(window.getComputedStyle(navMenu).paddingTop);
 let navMenuTopHide;
 
-//if mobile add extra padding to top of navmenu
-if (window.innerWidth <= 768) {
-  console.log("phone");
-  navMenu.style.paddingTop = `${ (navMenuPadTop + navBarNoPad).toString()}px`;
-  navMenuTopHide = `-${(navMenuTotalHeight + navBarNoPad).toString()}px`;
-} else if (window.innerWidth > 768) {
-  console.log("bigger than phone");
-  navMenuTopHide = `-${navMenuTotalHeight.toString()}px`;
-}
-
 
 //dynamically position nav-menu based on current header height
 const toggleTop = function (element) {
-
-  if (!element.classList.contains("open")) {
-    console.log(`${navMenuTopHide}`);
-    element.style.top = `${navMenuTopHide}`;
-    element.classList.remove("open");
-  } else if (element.classList.contains("open")) {
-    element.style.top = "0px";
-    element.classList.add("open");
+  if (window.getComputedStyle(hamburger).display != "none") {
+    if (!element.classList.contains("open")) {
+      console.log(`${navMenuTopHide}`);
+      element.style.top = `-${navMenuTopHide}px`;
+      element.classList.remove("open");
+    } else if (element.classList.contains("open")) {
+      element.style.top = "0px";
+      element.classList.add("open");
+    }
   }
 }
 
@@ -89,6 +79,7 @@ const headObserver = new IntersectionObserver(function(
   ) {
     entries.forEach(entry => {
       if (!entry.isIntersecting) {
+        //hide logo & bg
         navBar.classList.add("nav-scrolled");
         navMenu.classList.add("nav-scrolled");
         navLogo.classList.add("nav-scrolled");
@@ -98,8 +89,18 @@ const headObserver = new IntersectionObserver(function(
         })
         header.classList.add("nav-scrolled");
         toTop.classList.remove("hidden");
+        //measure navBar and navmenu
+        navBarNoPad = navBar.clientHeight;
+        navMenuTotalHeight = parseInt(window.getComputedStyle(navMenu).height);
+        //define padding top for hidden
+        navMenuTopHide = navBarNoPad + navMenuTotalHeight;
+
+        navMenu.style.paddingTop = `${navBarNoPad}px`;
+        navMenu.style.top = `-${navMenuTopHide}px`;
+        
         
       } else if (entry.isIntersecting) {
+        //show logo and bg
         navBar.classList.remove("nav-scrolled");
         navMenu.classList.remove("nav-scrolled");
         navLogo.classList.remove("nav-scrolled");
@@ -109,6 +110,20 @@ const headObserver = new IntersectionObserver(function(
         })
         header.classList.remove("nav-scrolled");
         toTop.classList.add("hidden");
+
+        //measure navBar and navmenu
+        navBarNoPad = navBar.clientHeight;
+        navMenuTotalHeight = parseInt(window.getComputedStyle(navMenu).height);
+        //define padding top for hidden
+        navMenuTopHide = navBarNoPad + navMenuTotalHeight;
+
+        if (window.innerWidth <= 768) {
+          navMenu.style.paddingTop = `${navBarNoPad}px`;
+          navMenu.style.top = `-${navMenuTopHide}px`;
+        } else if (window.innerWidth > 768) {
+          navMenu.style.paddingTop = `${navMenuPadTop}px`;
+          navMenu.style.top = `${navMenuDefaultTop}`;
+        }
         
       } 
     })
