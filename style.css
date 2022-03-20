@@ -90,21 +90,12 @@ header {
   transition: all .6s ease;
 }
 
-.nav-bar.nav-scrolled {
-  background-color: transparent;
-}
-
-
 .nav-logo,
 .foot-logo {
   width: 40%;
   max-width: 200px;
   margin:2rem;
   align-self: center;
-}
-
-.nav-logo.nav-scrolled {
-  opacity: 0;
 }
 
 .hamburger {
@@ -119,10 +110,6 @@ header {
   margin: 10px auto;
   transition: all 0.3s ease-in-out;
   background-color: var(--climb-yellow);
-}
-
-.bar.nav-scrolled {
-  background-color: var(--climb-dark-grey);
 }
 
 .hamburger.open .bar:nth-child(2){
@@ -163,7 +150,6 @@ header {
 
 .nav-menu.open {
   /* top determined in JS */
-  
 }
 
 .nav-link {
@@ -415,19 +401,8 @@ footer {
     background: linear-gradient(to bottom, var(--climb-dark-grey) 50%, var(--dark-grey-transparent));
   }
 
-  .nav-bar.nav-scrolled {
-    padding-bottom: 0;
-
-    /* nav-bar background transitionable? */
-    background: transparent;
-  }
-
   .hamburger {
     display: none;
-  }
-
-  .hamburger.nav-scrolled {
-    display: block;
   }
 
   .nav-menu {
@@ -444,21 +419,6 @@ footer {
     background-color: transparent;
     font-size: var(--fs-700);
   }
-
-  .nav-menu.nav-scrolled {
-    /* opacity: 0; */
-    position: absolute;
-    z-index: -1;
-
-    width: 100%;
-    padding-bottom: 1rem;
-
-    flex-direction: column;
-    justify-content: flex-end;
-
-    background-color: var(--dark-grey-low-opacity);
-  }
-
 
   .nav-link {
     padding:1rem;
@@ -542,10 +502,6 @@ footer {
 
   .nav-menu {
     font-size: var(--fs-600);
-  }
-
-  .nav-menu.nav-scrolled {
-    padding: 1rem 6rem;
   }
 
   .herotxt {

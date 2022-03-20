@@ -10,23 +10,25 @@ const hamBar = document.querySelectorAll(".bar");
 const footer = document.querySelector("footer");
 
 //MEASURE
-let navMenuDefaultTop = window.getComputedStyle(navMenu).top;
 let navBarNoPad = navBar.clientHeight;
+let navBarTotalHeight = parseInt(window.getComputedStyle(navBar).height);
 let navMenuTotalHeight = parseInt(window.getComputedStyle(navMenu).height);
 let navMenuPadTop = parseInt(window.getComputedStyle(navMenu).paddingTop);
-let navMenuTopHide;
+let navMenuTopHide = navMenuTotalHeight + navBarNoPad;
+let navMenuPadHide = `${navMenuPadTop + navBarTotalHeight}px`;
+
+if (window.innerWidth <= 768) {
+  navMenu.style.paddingTop = `${navMenuPadHide}`;
+}
 
 
 //dynamically position nav-menu based on current header height
 const toggleTop = function (element) {
   if (window.getComputedStyle(hamburger).display != "none") {
     if (!element.classList.contains("open")) {
-      console.log(`${navMenuTopHide}`);
       element.style.top = `-${navMenuTopHide}px`;
-      element.classList.remove("open");
     } else if (element.classList.contains("open")) {
       element.style.top = "0px";
-      element.classList.add("open");
     }
   }
 }
@@ -44,14 +46,6 @@ for ( let i = 0; i < anchors.length; i++) {
   anchors[i].style.marginTop = `${(navBarNoPad * -1).toString() + "px"}`;
   console.log(anchors[i].style);
 }
-
-//create smooth scroll function
-// const smoothScroll = function(link) {
-//   let href = link.getAttribute('href');
-//   console.log(href);
-//   let target = document.querySelector(`${href}`);
-//   target.scrollIntoView({behavior: "smooth"});
-// }
 
 //HAMBURGER OPEN AND CLOSE
 hamburger.addEventListener("click", () => {
@@ -78,55 +72,12 @@ const headObserver = new IntersectionObserver(function(
   entries,
   headObserver
   ) {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) {
-        //hide logo & bg
-        navBar.classList.add("nav-scrolled");
-        navMenu.classList.add("nav-scrolled");
-        navLogo.classList.add("nav-scrolled");
-        hamburger.classList.add("nav-scrolled");
-        hamBar.forEach(bar => {
-          bar.classList.add("nav-scrolled");
-        })
-        header.classList.add("nav-scrolled");
+   entries.forEach(entry => {
+     if (!entry.isIntersecting) {
         toTop.classList.remove("hidden");
-        //measure navBar and navmenu
-        navBarNoPad = navBar.clientHeight;
-        navMenuTotalHeight = parseInt(window.getComputedStyle(navMenu).height);
-        //define padding top for hidden
-        navMenuTopHide = navBarNoPad + navMenuTotalHeight;
-
-        navMenu.style.paddingTop = `${navBarNoPad}px`;
-        navMenu.style.top = `-${navMenuTopHide}px`;
-        
-        
       } else if (entry.isIntersecting) {
-        //show logo and bg
-        navBar.classList.remove("nav-scrolled");
-        navMenu.classList.remove("nav-scrolled");
-        navLogo.classList.remove("nav-scrolled");
-        hamburger.classList.remove("nav-scrolled");
-        hamBar.forEach(bar => {
-          bar.classList.remove("nav-scrolled");
-        })
-        header.classList.remove("nav-scrolled");
         toTop.classList.add("hidden");
-
-        //measure navBar and navmenu
-        navBarNoPad = navBar.clientHeight;
-        navMenuTotalHeight = parseInt(window.getComputedStyle(navMenu).height);
-        //define padding top for hidden
-        navMenuTopHide = navBarNoPad + navMenuTotalHeight;
-
-        if (window.innerWidth <= 768) {
-          navMenu.style.paddingTop = `${navBarNoPad}px`;
-          navMenu.style.top = `-${navMenuTopHide}px`;
-        } else if (window.innerWidth > 768) {
-          navMenu.style.paddingTop = `${navMenuPadTop}px`;
-          navMenu.style.top = `${navMenuDefaultTop}`;
-        }
-        
-      } 
+        } 
     })
   }, 
   headerOptions);
