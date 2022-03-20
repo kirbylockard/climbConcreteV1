@@ -21,8 +21,6 @@ if (window.innerWidth <= 768) {
   navMenu.style.paddingTop = `${navMenuPadHide}`;
 }
 
-
-//dynamically position nav-menu based on current header height
 const toggleTop = function (element) {
   if (window.getComputedStyle(hamburger).display != "none") {
     if (!element.classList.contains("open")) {
@@ -36,7 +34,7 @@ const toggleTop = function (element) {
 toggleTop(navMenu);
 
 // FIX OVERSCROLL ON ANCHORS
-//this is making a tiny gab btw landing and main...
+//this is making a tiny gap btw landing and main...
 let about = document.querySelector("#about");
 let contact = document.querySelector("#contact");
 let anchors = [about, contact];
