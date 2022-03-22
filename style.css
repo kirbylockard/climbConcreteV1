@@ -178,6 +178,16 @@ header {
   font-size: var(--fs-700);
 }
 
+.thanks-head {
+  justify-content: center;
+}
+
+.thanks-logo {
+  max-width: 30%;
+  padding: 3rem;
+  margin: 0 auto;
+}
+
 .highlight-txt {
   color: var(--climb-dark-grey);
   font-weight: bold;
@@ -393,6 +403,8 @@ footer {
 .email {
   padding: .25rem;
 }
+
+
 
 /* ------------MEDIA QUERIES------------ */
 
