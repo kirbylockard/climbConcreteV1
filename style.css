@@ -1,26 +1,26 @@
 :root {
-  --climb-yellow: #E5BB44;
+  --climb-yellow: #e5bb44;
   /* --climb-yellow: #E5BB44;  E0BC29 */
-  --climb-light-grey: #74746D;
+  --climb-light-grey: #74746d;
   --climb-lightest-grey: #b5b5b5;
-  --climb-dark-grey: #20201E;
-  --light-grey: #C7C7C5;
+  --climb-dark-grey: #20201e;
+  --light-grey: #c7c7c5;
   /* --darker-yellow: #B39621; */
-  --dark-grey-transparent: #20201E00;
-  --dark-grey-low-opacity: #20201EE6;
-  --dark-grey-minimal-opacity: #20201EB3;
+  --dark-grey-transparent: #20201e00;
+  --dark-grey-low-opacity: #20201ee6;
+  --dark-grey-minimal-opacity: #20201eb3;
 
   --fs-xl: 5rem;
   --fs-800: 3rem;
   --fs-700: 2.4rem;
   --fs-600: 1.9rem;
   --fs-500: 1.75rem;
-  --fs-400: 1.6rem; 
+  --fs-400: 1.6rem;
   --fs-200: 1.15rem;
 }
 
 html {
-  /* scroll-behavior: smooth; */
+  scroll-behavior: smooth;
 }
 .hide-scroll {
   -ms-overflow-style: none;
@@ -54,7 +54,6 @@ a {
   color: inherit;
 }
 
-
 /* HEADER AND NAV */
 .landing {
   height: 100vh;
@@ -71,7 +70,7 @@ a {
   width: 100vw;
   height: 100vh;
   object-fit: cover;
-  opacity: .4;
+  opacity: 0.4;
 }
 
 header {
@@ -87,14 +86,14 @@ header {
   align-items: center;
 
   background-color: var(--climb-dark-grey);
-  transition: all .6s ease;
+  transition: all 0.6s ease;
 }
 
 .nav-logo,
 .foot-logo {
   width: 40%;
   max-width: 200px;
-  margin:2rem;
+  margin: 2rem;
   align-self: center;
 }
 
@@ -112,22 +111,21 @@ header {
   background-color: var(--climb-yellow);
 }
 
-.hamburger.open .bar:nth-child(2){
+.hamburger.open .bar:nth-child(2) {
   opacity: 0;
 }
 
-.hamburger.open .bar:nth-child(1){
+.hamburger.open .bar:nth-child(1) {
   transform: translateY(13px) rotate(45deg);
   background-color: var(--climb-yellow);
 }
 
-.hamburger.open .bar:nth-child(3){
+.hamburger.open .bar:nth-child(3) {
   transform: translateY(-12.5px) rotate(-45deg);
   background-color: var(--climb-yellow);
 }
 
-
-.nav-menu{
+.nav-menu {
   position: absolute;
   left: 0;
   z-index: -1;
@@ -141,11 +139,11 @@ header {
   justify-content: space-around;
 
   font-size: var(--fs-800);
-  letter-spacing: .25rem;
+  letter-spacing: 0.25rem;
   color: var(--climb-yellow);
   background-color: var(--dark-grey-low-opacity);
-  
-  transition: top .7s ease, opacity .7s ease;
+
+  transition: top 0.7s ease, opacity 0.7s ease;
 }
 
 .nav-menu.open {
@@ -156,13 +154,12 @@ header {
   padding: 1rem;
 }
 
-
 /* LANDING / HERO */
 
 .herotxt {
   position: absolute;
-  top:50%;
-  left:50%;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   width: 95vw;
 
@@ -173,7 +170,7 @@ header {
 }
 
 .thankstxt {
-  top:60%;
+  top: 60%;
   transform: translate(-50%, -60%);
   font-size: var(--fs-700);
 }
@@ -204,9 +201,8 @@ header {
   bottom: 8rem;
   left: 2rem;
   color: var(--climb-dark-grey);
-  animation: animateColor 2.5s cubic-bezier(.7, 0, .3, 1) infinite;
+  animation: animateColor 2.5s cubic-bezier(0.7, 0, 0.3, 1) infinite;
 }
-
 
 @keyframes animateColor {
   50% {
@@ -219,7 +215,7 @@ header {
   bottom: 3vw;
   left: 80vw;
   color: var(--climb-dark-grey);
-  transition: color .7s ease, opacity .7s ease;
+  transition: color 0.7s ease, opacity 0.7s ease;
   z-index: 3;
 }
 
@@ -239,16 +235,11 @@ header {
   opacity: 0;
 }
 
-
-
-
 /* SECTIONS */
 main {
   display: flex;
   flex-direction: column;
 }
-
-
 
 .pillar-card {
   padding-top: 2rem;
@@ -278,8 +269,8 @@ main {
 .pillar-info p {
   background-color: var(--dark-grey-minimal-opacity);
   color: var(--climb-lightest-grey);
-  border-top: solid .75rem var(--climb-yellow);
-  border-left:solid .75rem var(--climb-yellow);
+  border-top: solid 0.75rem var(--climb-yellow);
+  border-left: solid 0.75rem var(--climb-yellow);
   font-size: var(--fs-500);
   line-height: 2rem;
   padding: 1.5rem 1rem 1.5rem 1.5rem;
@@ -297,10 +288,9 @@ main {
   top: 0;
 }
 
-
 /* CONTACT */
 
-.contact-wrap{
+.contact-wrap {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -323,7 +313,7 @@ main {
 }
 
 /* .contactinfo,*/
-.contact p { 
+.contact p {
   padding: 2rem 1rem;
   font-size: var(--fs-500);
   line-height: 2rem;
@@ -335,7 +325,7 @@ main {
   display: inline-flex;
   flex-direction: column;
   width: 90%;
-  border-bottom: double 1rem var(--climb-yellow);;
+  border-bottom: double 1rem var(--climb-yellow);
   padding-bottom: 3rem;
   margin: 0 auto;
 }
@@ -347,7 +337,7 @@ main {
   margin: 0 auto;
 }
 
-.contact-form label{
+.contact-form label {
   font-size: var(--fs-500);
 }
 
@@ -355,12 +345,12 @@ main {
 .contact-form textarea {
   font: inherit;
   font-size: var(--fs-500);
-  padding: .5rem;
+  padding: 0.5rem;
   margin: 1rem;
 }
 
 .contact-send {
-  height:4rem;
+  height: 4rem;
   width: 30vw;
   align-self: center;
   margin: 2rem;
@@ -370,11 +360,10 @@ main {
   font-size: var(--fs-700);
   font-weight: bold;
   background-color: var(--climb-yellow);
-  border-radius: .75rem;
+  border-radius: 0.75rem;
   color: inherit;
-  border: solid .1rem var(--climb-dark-grey);
+  border: solid 0.1rem var(--climb-dark-grey);
 }
-
 
 /* FOOTER */
 
@@ -388,7 +377,6 @@ footer {
   padding: 1rem;
 }
 
-
 .footcontactinfo {
   color: var(--climb-light-grey);
   font-size: var(--fs-200);
@@ -401,17 +389,15 @@ footer {
 
 .phone,
 .email {
-  padding: .25rem;
+  padding: 0.25rem;
 }
-
-
 
 /* ------------MEDIA QUERIES------------ */
 
 @media screen and (min-width: 768px) {
   .nav-bar,
   .nav-menu {
-    transition: all .6s ease;
+    transition: all 0.6s ease;
   }
 
   .nav-bar {
@@ -432,21 +418,21 @@ footer {
     top: 0;
     z-index: 4;
 
-    width:auto;
+    width: auto;
     margin-bottom: 2rem;
     padding-bottom: 0;
     /* transition: none; */
     flex-direction: row;
-    
+
     background-color: transparent;
     font-size: var(--fs-700);
   }
 
   .nav-link {
-    padding:1rem;
+    padding: 1rem;
     /* padding-bottom: 0; */
   }
-  
+
   .nav-link:hover {
     text-decoration: underline;
   }
@@ -471,7 +457,7 @@ footer {
   }
 
   .pillar-info {
-    border: solid .25rem var(--climb-yellow);
+    border: solid 0.25rem var(--climb-yellow);
   }
 
   .contact-wrap {
@@ -493,8 +479,7 @@ footer {
   .phone {
     font-size: var(--fs-400);
   }
-
-} 
+}
 
 @media screen and (min-width: 1530px) {
   main {
@@ -522,7 +507,7 @@ footer {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    
+
     margin: 4rem auto;
   }
 
@@ -569,7 +554,6 @@ footer {
 
   .contact-send {
     margin: auto;
-
   }
 
   footer {
@@ -585,6 +569,4 @@ footer {
   .email {
     padding: 2rem;
   }
-  
- 
 }
